@@ -1,3 +1,8 @@
+body{
+  max-width: 960px;
+
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -14,8 +19,23 @@ cite {
   padding-left: 0px;
 }
 
+#external-links{
+  width: 20%;
+  float: right;
+}
+
+main{
+  width: 80%;
+  float: none;
+}
+
+#tutorial{
+  float: none;
+  width: 100%;
+}
+
 /* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
+image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 img {
   width: 100%;
@@ -29,4 +49,33 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+
+@media screen and (max-width: 500px){
+  body{
+    background-color: pink;
+  }
+  #external-links{
+    width: 100%;
+    float: none;
+  }
+  main{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 950px){
+  #tutorial{
+    float: left;
+    width: 15%;
+  }
+  #external-links{
+    float: right;
+    width: 15%
+  }
+  main{
+    width: 70%;
+    float: right;
+  }
 }
