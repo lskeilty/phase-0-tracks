@@ -1,0 +1,26 @@
+header {
+  background-color: pink;
+}
+
+section {
+  float: left;
+  border: solid 1px black;
+  width: 40%;
+  padding: 10px;
+  font-family: Helvetica;
+}
+.column-1 {
+  background-color: lightblue;
+}
+
+.column-2 {
+  background-color: lightgreen;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/54/63/92/546392d27c69aca899ba3c37d7e3ce15.jpg");
+  margin-left: 50px;
+}
+
+footer {
+  border: solid 1px black;
+  clear: both;
+  color: red;
+}
