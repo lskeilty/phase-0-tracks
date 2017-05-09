@@ -1,16 +1,38 @@
 Using an elevator
  
-- stand in front of elevator buttons,
-- press the desired direction button (up for a floor above you, down for a floor below you)
- 
-- when elevator arrives and your floor
-- doors open
-- enter elevator
-- press button for desired floor (if not already lit up)
+- stand in front of elevator up/down buttons,
+	-if going to a floor above you, press the up button
+	-if going to a floor below you, press the down button
+
+- when elevator arrives at your floor
+	- doors open
+	- enter elevator
+	- press button for desired floor (if not already lit up)
  
 - when elevator stops at desired floor
--  doors open
--  exit elevator
+	-  doors open
+	-  exit elevator
  
 - if elevator doors won’t open
-- call help button
+	- call help button
+
+
+
+
+Waking up in the morning
+
+if in bed sleeping at 6:29AM, weekdays:
+
+Alarm1 goes off 6:30AM
+	- if tired wait for 2nd alarm
+   	- if not tired, get up and start the day
+
+Alarm2 goes off 6:35AM
+	- if tired wait for 3rd alarm
+	- if not tired, get up and start the day
+
+Alarm3 goes off 6:40AM
+	- get up and start the day
+
+If you're not feeling well
+       - call in sick to work
