@@ -1,0 +1,16 @@
+Using an elevator
+ 
+- stand in front of elevator buttons,
+- press the desired direction button (up for a floor above you, down for a floor below you)
+ 
+- when elevator arrives and your floor
+- doors open
+- enter elevator
+- press button for desired floor (if not already lit up)
+ 
+- when elevator stops at desired floor
+-  doors open
+-  exit elevator
+ 
+- if elevator doors won’t open
+- call help button
