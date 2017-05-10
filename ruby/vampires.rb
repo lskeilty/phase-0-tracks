@@ -14,9 +14,9 @@ puts "What year were you born?"
 year = gets.chomp
 year_born = year.to_i
   if year_born > 1917
-    year_born = true
-  else year_born < 1917
     year_born = false
+  else year_born < 1917
+    year_born = true
   end
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you?"
@@ -37,7 +37,10 @@ else insurance == 'no'
   insurance = false
 end
 
-if age && gb_pref || insurance
+if vampire_name == "Drake Cula" || "Tu Fang"
+  puts "Definitely a vampire"
+
+elsif age && gb_pref || insurance
   puts "Probably not a vampire"
 
 elsif !age && !gb_pref && !insurance
@@ -45,9 +48,6 @@ elsif !age && !gb_pref && !insurance
 
 elsif !age && (!insurance || !gb_pref)
   puts "Probably a vampire"
-
-elsif vampire_name == "Drake Cula" || "Tu Fang"
-  puts "Definitely a vampire"
 
 else
   print "Results inconclusive"
