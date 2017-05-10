@@ -1,3 +1,9 @@
+puts "How many employees to process?"
+employee_number = gets.chomp
+employee = employee_number.to_i
+
+employee.times do
+
 puts "What is your name?"
 vampire_name = gets.chomp
 
@@ -55,4 +61,4 @@ else
 end
 
 
-
+end
