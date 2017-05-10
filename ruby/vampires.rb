@@ -43,6 +43,20 @@ else insurance == 'no'
   insurance = false
 end
 
+puts "Please type allergies (if any) one by one, hitting enter after each entry. Type done & hit enter when no more allergies to type."
+allergies = gets.chomp
+
+   until allergies == "done" || allergies == "sunshine"
+     puts "Please type allergies one by one, hitting enter after each entry. Type done when no more allergies to type."
+allergies = gets.chomp
+   end
+
+  if allergies == "sunshine"
+     sunshineallergy = true
+  elsif allergies == "done"
+    sunshineallergy = false
+   end
+
 if vampire_name == "Drake Cula" || "Tu Fang"
   puts "Definitely a vampire"
 
@@ -52,7 +66,7 @@ elsif age && gb_pref || insurance
 elsif !age && !gb_pref && !insurance
   puts "Almost certainly a vampire"
 
-elsif !age && (!insurance || !gb_pref)
+elsif !age && (!insurance || !gb_pref || sunshineallergy)
   puts "Probably a vampire"
 
 else
