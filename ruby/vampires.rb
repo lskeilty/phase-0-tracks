@@ -37,11 +37,11 @@ gb_pref = gets.chomp
 puts "Would you like to enroll in the company's health insurance?"
 insurance = gets.chomp
 
-if insurance == 'yes'
+  if insurance == 'yes'
   insurance = true
-else insurance == 'no'
+  else insurance == 'no'
   insurance = false
-end
+  end
 
 puts "Please type allergies (if any) one by one, hitting enter after each entry. Type done & hit enter when no more allergies to type."
 allergies = gets.chomp
@@ -71,7 +71,6 @@ elsif !age && (!insurance || !gb_pref || sunshineallergy)
 
 else
   print "Results inconclusive"
-
 end
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
