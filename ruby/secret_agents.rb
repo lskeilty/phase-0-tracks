@@ -26,9 +26,6 @@ encrypt("abc")
         the index of the password is equal to the 1st  index of the alphabet
       or else
         the index of the password is equal to the
-
-
-
 =end
 
 def decrypt(password)
