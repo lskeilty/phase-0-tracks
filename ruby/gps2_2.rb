@@ -72,3 +72,19 @@ end
 print_list(grocery_list)
 # steps: iterate each item of the grocery list to print a sentence"
 # output: a printed out sentence
+
+=begin
+REFLECT
+What did you learn about pseudocode from working on this challenge? Psuedocoding is a great way to plan out your coding in an easy to read format.
+What are the tradeoffs of using arrays and hashes for this challenge?
+Arrays are good if there isn't as much info. Hashes are good if there is information that corresponds to other information
+What does a method return?
+A method returns the last line of code executed.
+What kind of things can you pass into methods as arguments?
+Strings, booleans, integers, variables
+How can you pass information between methods?
+setting the value of the output of one method into the argument of another method
+What concepts were solidified in this challenge, and what concepts are still confusing?
+switching between methods was more solidified. i don't thin i have any concepts confusing at the moment.
+
+=end
