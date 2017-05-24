@@ -26,6 +26,22 @@ class Santa
     last = @reindeer_ranking.slice!(index)
     @reindeer_ranking.push(last)
   end
+
+  #GetterMethods# - Refactored using attr
+=begin
+  def age
+    @age
+  end
+  def ethnicity
+    @ethnicity
+  end
+
+  #SetterMethods# - refactored using attr
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+=end
+
 end
 
 #array of sample genders
