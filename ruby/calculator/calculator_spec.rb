@@ -30,3 +30,6 @@ describe Calculator do
     expect(calculator.divide(20,5)).to eq 4
   end
 end
+
+#RELASE 2
+#1. found a couple cheat sheets & bookmarked them. 2. The ruby documentation I found by googling 'ruby docs rspec' 3. Other matchers besides 'eq' would be .equal or == 4. Found a couple to bookmark
