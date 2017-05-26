@@ -1,12 +1,9 @@
 class Game
-  attr_accessor :user1_input
-  attr_accessor :user2_input
   attr_reader :guess_count
   attr_accessor :blankword
 
   def intialize
     @guess_count
-    @is_over
     @blankword = ''
   end
 
