@@ -1,0 +1,61 @@
+RELEASE 2
+
+1.) Display the information in one table (either table is fine).
+	-input: SELECT * FROM players;
+	-output: 1|Steph Curry|30|Guard|1
+		 2|LeBron James|23|Forward|2
+		 3|Kevin Durant|35|Forward|1
+		 4|Kyrie Irving|2|Guard|2
+		 5|Draymond Green|23|Forward|1
+
+2.) Update an item that meets some condition (you can choose a condition that makes sense).
+	-input:UPDATE teams SET team="Golden State Warriors" WHERE id=1;
+	-no output but results are: 1|Golden State Warriors
+				    2|Cavaliers
+
+3.) Display the information in both tables using one query.
+	-input: SELECT * FROM players, teams WHERE players.team_id = teams.id;
+	-output: 1|Steph Curry|30|Guard|1|1|Golden State Warriors
+		 2|LeBron James|23|Forward|2|2|Cavaliers
+		 3|Kevin Durant|35|Forward|1|1|Golden State Warriors
+		 4|Kyrie Irving|2|Guard|2|2|Cavaliers
+		 5|Draymond Green|23|Forward|1|1|Golden State Warriors
+
+4.) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+	-input: SELECT players.name, teams.team FROM players JOIN teams ON players.team_id = teams.id;
+	-output: Steph Curry|Golden State Warriors
+		 LeBron James|Cavaliers
+		 Kevin Durant|Golden State Warriors
+		 Kyrie Irving|Cavaliers
+		 Draymond Green|Golden State Warriors
+
+5.)Delete an item that meets some condition (you can choose a condition that makes sense).
+	-input: DELETE FROM players
+   		...> WHERE name="Kyrie Irving";
+	-no output but results: 1|Steph Curry|30|Guard|1
+				2|LeBron James|23|Forward|2
+				3|Kevin Durant|35|Forward|1
+				5|Draymond Green|23|Forward|1
+
+RELEASE 3
+1.) Joins combine columns from one or more tables in databases using common values. You can apply different conditions to a join to change what’s displayed. The w3 schools webpage on joins has a good diagram.(inner join, left join, right join, full outer join). 
+
+2.) A few diff joins:
+	-input: SELECT players.id, teams.team FROM players INNER JOIN teams ON players.team_id = teams.id;
+	-output: 1|Golden State Warriors
+		 2|Cavaliers
+	 	 3|Golden State Warriors
+		 5|Golden State Warriors
+
+	-input: SELECT players.name, players.number, players.position, teams.team FROM players LEFT JOIN teams ON players.team_id = teams.id;
+	-output: Steph Curry|30|Guard|Golden State Warriors
+		 LeBron James|23|Forward|Cavaliers
+		 Kevin Durant|35|Forward|Golden State Warriors
+		 Draymond Green|23|Forward|Golden State Warriors
+
+	-input: SELECT teams.team, players.name, players.number FROM players JOIN teams ON players.team_id = teams.id;
+	-output: Golden State Warriors|Steph Curry|30
+		 Cavaliers|LeBron James|23
+		 Golden State Warriors|Kevin Durant|35
+		 Golden State Warriors|Draymond Green|23
+
