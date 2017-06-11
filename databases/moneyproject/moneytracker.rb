@@ -24,11 +24,11 @@ db.execute(create_table)
 
 
 # Method for adding an expense
-#def add_expense(database, expense_name, dollars_spent, expense_date, expense_category)
-  #database.execute("INSERT INTO moneys (expense_name, dollars_spent, expense_date, expense_category) VALUES (?, ?, ?, ?)" [expense_name, dollars_spent, expense_date, expense_category])
-#end
+def add_expense(database, expense_name, dollars_spent, expense_date, expense_category)
+  database.execute("INSERT INTO moneys (expense_name, dollars_spent, expense_date, expense_category) VALUES (?, ?, ?, ?)", [expense_name, dollars_spent, expense_date, expense_category])
+end
 
-# Method to display last 10 expense
+# Method to display last 10 expenses
 def last_ten(database)
   puts "Last ten expenses:"
   expenditures = database.execute("SELECT * FROM moneys ORDER BY expense_date DESC")
