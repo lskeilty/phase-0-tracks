@@ -34,7 +34,8 @@ def print_menu
   puts "1. Enter Expense"
   puts "2. See last ten expenses"
   puts "3. Type in a category to see the expenses from that category"
-  puts "4. Exit"
+  puts "4. Sum of all expenses"
+  puts "5. Exit"
 end
 
 # Method to display last 10 expenses
@@ -57,6 +58,11 @@ def categorizer(database)
     end
 end
 
+def catsum(database)
+  sum = database.execute("SELECT SUM(dollars_spent)  FROM moneys")
+  print sum
+end
+
 # UI
 puts "Welcome to the Expense Tracker"
 
@@ -64,7 +70,7 @@ exit_program = false
 until exit_program
 
   print_menu
-  puts "Please select a menu item number 1-4."
+  puts "Please select a menu item number 1-5."
   option_selection = gets.chomp
 
   if option_selection == "1"
@@ -90,6 +96,9 @@ until exit_program
     print categorizer(db)
 
   elsif option_selection == "4"
+    print catsum(db)
+
+  elsif option_selection == "5"
     exit_program = true
 
   else
