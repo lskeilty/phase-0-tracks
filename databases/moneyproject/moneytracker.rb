@@ -28,6 +28,15 @@ def add_expense(database, expense_name, dollars_spent, expense_date, expense_cat
   database.execute("INSERT INTO moneys (expense_name, dollars_spent, expense_date, expense_category) VALUES (?, ?, ?, ?)", [expense_name, dollars_spent, expense_date, expense_category])
 end
 
+# Options for user
+def print_menu
+  puts "Options:"
+  puts "1. Enter Expense"
+  puts "2. See last ten expenses"
+  puts "3. Type in a category to see the expenses from that category"
+  puts "4. Exit"
+end
+
 # Method to display last 10 expenses
 def last_ten(database)
   puts "Last ten expenses:"
@@ -37,23 +46,25 @@ def last_ten(database)
   end
 end
 
-# Options for user
-def print_menu
-  puts "Options:"
-  puts "1. Enter Expense"
-  puts "2. See last ten expenses"
-  puts "3. Exit"
+# Method to print out certain expense categories
+def categorizer(database)
+  puts "Type in one of the following categories: Categories: Food/Beverage, Transportation, Rent, Self-Care, Entertainment, Charity, Debt, Clothing"
+    category_selection = gets.chomp
+    categories = database.execute("SELECT * FROM moneys WHERE expense_category = '#{category_selection}'")
+    puts "Most recent #{category_selection} category entries:"
+    categories.each do |entry|
+      puts "Expense:#{entry['expense_name']}, Spent:#{entry['dollars_spent']}, Date:#{entry['expense_date']}."
+    end
 end
 
 # UI
-
 puts "Welcome to the Expense Tracker"
 
 exit_program = false
 until exit_program
 
   print_menu
-  puts "Please select a menu item number 1-3."
+  puts "Please select a menu item number 1-4."
   option_selection = gets.chomp
 
   if option_selection == "1"
@@ -76,6 +87,9 @@ until exit_program
     print last_ten(db)
 
   elsif option_selection == "3"
+    print categorizer(db)
+
+  elsif option_selection == "4"
     exit_program = true
 
   else
