@@ -25,3 +25,24 @@ post '/students' do
 end
 
 # add static resources
+
+# create a form to
+# use the parameters to search through the database
+# and return the students found
+# if none are found
+# return saying no students were found
+post '/database' do
+  student_list = db.execute("SELECT * FROM students")
+  search_results = ""
+  student_list.each do |student|
+    student_name = student.fetch_values("name").join.downcase
+    if student_name.include? ("#{params[:name]}".downcase)
+      search_results << "ID: #{student['id']} | Name: #{student['name']} | Age: #{student['age']} | Campus: #{student['campus']}<br>"
+    end
+  end
+  if search_results == ""
+    "No students were found with that name."
+  else
+    search_results
+  end
+end
